@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>이미지에 캡션달기</title>
+<link rel="stylesheet" href="./css/normalize.css">  <!--표준화-->
+<link rel="stylesheet" href="./css/main.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="./js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="./js/vendor/jquery.typoshadow.js"></script>
+<script src="./js/main.js"></script>
+</head>
+<body>
+
+<header class="page-header" role="banner">
+    <h1>Creative jQuery Sample</h1>
+</header>
+
+<div class="page-main" role="main">
+    <div id="typo">
+        <div class="inner">Creative jQuery</div>
+    </div>
+
+    <div id="images">
+        <h2>IMAGES</h2>
+        <div class="inner clearfix">
+            <p>
+                <img src="img/01_img.jpg">
+                <strong>Hummingbird</strong>
+                <span></span>
+            </p>
+            <p><img src="img/02_img.jpg"><strong>Sitta</strong><span></span></p>
+            <p><img src="img/03_img.jpg"><strong>Bee-eater</strong><span></span></p>
+        </div>
+    </div>
+
+    <div id="buttons1">
+        <h2>BUTTONS1</h2>
+        <div class="inner clearfix">
+            <button>Albatross</button>
+            <button>Bishop</button>
+            <button>Canary</button>
+            <button>Duck</button>
+            <button>Eagle</button>
+            <button>Falcon</button>
+            <button>Goose</button>
+            <button>Hawk</button>
+
+            <button>Ibis<span class="bg"><span> Ibis</span></span></button>
+            <button>Jaeger<span class="bg"><span>Jaeger</span></span></button>
+            <button>Kingfisher<span class="bg"><span>Kingfisher</span></span></button>
+            <button>Lark<span class="bg"><span>Lark</span></span></button>
+        </div>
+    </div>
+
+    <!-- div#buttons2>h2{BUTTONS2}+div.inner.clearfix>button    //클래스가 여러개일때는 .으로 연결-->
+    <div id="buttons2">
+        <h2>BUTTONS2</h2>
+        <div class="inner clearfix">
+            <button>
+                <!-- span>img[src="img/01_gr.png"]+img[src="img/01_bl.png"]+br+{ELEPHANT} -->
+                <span>
+                    <img src="img/01_gr.png" alt="">
+                    <img src="img/01_bl.png" alt=""></br>
+                    ELEPHANT
+                </span>
+            </button>
+            <button>
+                <span>
+                    <img src="img/02_gr.png" alt="">
+                    <img src="img/02_bl.png" alt=""></br>
+                    GIRAFFE
+                </span>
+            </button>
+            <button>
+                <span>
+                    <img src="img/03_gr.png" alt="">
+                    <img src="img/03_bl.png" alt=""></br>
+                    WOLF
+                </span>
+            </button>
+            <button>
+                <span>
+                    <img src="img/04_gr.png" alt="">
+                    <img src="img/04_bl.png" alt=""></br>
+                    RHINOCEROS
+                </span>
+            </button>
+        </div>
+    </div>
+
+    <!-- aside>(ul>(li>a>img[src="img/$$_aside.png"])*3)+button>img[src="img/btn_open.png"]*2 -->
+
+    <aside id="aside">
+        <ul>
+            <li><a href=""><img src="img/01_aside.png" alt=""></a></li>
+            <li><a href=""><img src="img/02_aside.png" alt=""></a></li>
+            <li><a href=""><img src="img/03_aside.png" alt=""></a></li>
+        </ul>
+        <button>
+            <img src="img/btn_open.png" alt="">
+        </button>
+    </aside>
+</div>
+
+<footer class="page-footer" role="contentinfo">
+    <small class="copyright">COPYRIGHT &copy; <a href="#" target="_blank">우리나라 대한민국(주)</a></small>
+</footer>
+
+</body>
+</html>

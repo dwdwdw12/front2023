@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>                 /*outline/internal 방식*/
+#bbbb{
+	color: red;         /*우선순위 생각하기*/
+}
+.aaaa{
+	color: green;
+}
+h1, h2, p {
+  text-align: center;
+  color: red;
+}
+</style>
+</head>
+<body>
+
+<h1 class="aaaa" id="bbbb">Hello World!</h1>
+<h2 class="aaaa">Smaller heading!</h2>
+<p id="bbbb">This is a paragraph.</p>   <!--표기오류, id 유일성 브라우저에 따라 style이 적용될수도, 되지 않을 수도 있음-->
+<h3 style="color: blue">abcd</h3>   <!--inline 방식-->
+
+</body>
+</html>

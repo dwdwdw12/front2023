@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>for 구문과 배열의 조합(알고리즘)</h1>
+
+    <script>    //x자로 별찍기
+        let strTwoLayArr= [ [' ', ' ', ' ' ,' ', ' '],   //0
+                            [' ', ' ', ' ' ,' ', ' '],
+                            [' ', ' ', ' ' ,' ', ' '],   //같은 장소에 2개
+                            [' ', ' ', ' ' ,' ', ' '],
+                            [' ', ' ', ' ' ,' ', ' ']    //4
+        ];
+
+        for(let i=0; i<strTwoLayArr.length; i=i+1){ //strTwoLayArr.length=5
+            strTwoLayArr[i][i]="*";
+            strTwoLayArr[i][strTwoLayArr.length-1-i]="*";       //1차원
+        };  //데이터를 담고 있는 변수가 2차원 배열이어도 1차원 for 구문을 사용할 수 있다.
+        //데이터의 차수를 줄이는 것이 프로그램의 복잡도 및 성능을 향상시킬 수 있다.->배열을 펼침
+        //데이터를 구상할 때도 위와 같은 원리가 적용된다.->문자열- 사례 중 하나.
+
+        for(let i=0; i<strTwoLayArr.length; i=i+1){
+            let strchar=[];                         //2차원
+            for(let j=0; j<strTwoLayArr.length; j=j+1){
+                strchar=strchar+strTwoLayArr[i][j];
+            }
+            console.log(strchar);
+        }
+        //데이터를 구상할 때도 위와 같은 원리가 적용된다.->문자열- 사례 중 하나.
+        let strArr=['abc', 'def', 'ghi'];   //1차원 배열 안에 문자열이 3개 있다.    
+        //문자라면 let strArr=[
+        //                      ['a', 'b', 'c'],
+        //                      ['d', 'e', 'f'],
+        //                      ['g', 'h', 'i']
+        //];
+    </script>
+</body>
+</html>

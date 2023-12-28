@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body>p:nth-of-type(-n+4){
+            background-color: red;
+        }
+        body>p:nth-of-type(n+5):nth-of-type(-n+8){   /*a:b, a에서 b까지*/
+            background-color: yellow;
+        }
+        body>p:nth-of-type(n+9){        /*적용범위,계층 결정*/
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <p>문장들이 들어가는 문단001</p>
+    <p>문장들이 들어가는 문단002</p>
+    <p>문장들이 들어가는 문단003</p>
+    <p>문장들이 들어가는 문단004</p>
+    <p>문장들이 들어가는 문단005</p>
+    <p>문장들이 들어가는 문단006</p>
+    <p>문장들이 들어가는 문단007</p>
+    <p>문장들이 들어가는 문단008</p>
+    <p>문장들이 들어가는 문단009</p>
+    <p>문장들이 들어가는 문단010</p>
+    <div>
+        <p>aaa001</p>
+        <p>aaa002</p>
+        <p>aaa003</p>
+        <p>aaa004</p>
+        <p>aaa005</p>
+        <p>aaa006</p>
+        <p>aaa007</p>
+        <p>aaa008</p>
+        <p>aaa009</p>
+        <p>aaa010</p>
+        <p>aaa011</p>
+        <p>aaa012</p>
+    </div>
+</body>
+</html>

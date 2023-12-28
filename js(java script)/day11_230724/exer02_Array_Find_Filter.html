@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Arrays</h1>
+<h2>The find() Method</h2>
+
+<p id="demo"></p>
+
+<script>
+const numbers = [4, 9, 16, 25, 13, 29, 36, 75, 16, 33];
+// let first = numbers.indexOf(numbers.find(myFunction));  //index 찾기
+
+// document.getElementById("demo").innerHTML = "First number over 18 is " + first;
+
+// function myFunction(value, index, array) {
+//   return value > 18;
+// }
+
+//30보다 큰 자료의 개수
+const over30 = numbers.filter(myFunction);
+console.log("결과=>: ", over30.length);
+function myFunction(value, index, array) {
+  return value > 30;
+}
+
+let resultdiv = "ABCDEFGHIJK".split('');
+console.log(resultdiv.toString());
+console.log(Array.from("ABCDEFGHIJK"));
+</script>
+
+</body>
+</html>

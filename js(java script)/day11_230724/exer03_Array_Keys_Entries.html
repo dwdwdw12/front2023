@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>객체에 들어있는 속성 및 속성값 얻기</h1>
+
+    <script>
+        let objData={
+            irum: '홍길동',
+            kor: 100,
+            eng: 90,
+            mat: 80
+        };
+
+        let resultKeys = Object.keys(objData);
+        console.log(resultKeys, resultKeys instanceof Array);   //배열인가? typeOf: 숫자, 함수, 문자열. 나머지는 instanceof
+        Object.keys(objData).forEach((val)=>{console.log(objData[val])});   //홍길동, 100, 90, 80
+        Object.keys(objData).forEach((val)=>{console.log(objData.val)});    // undefined
+    </script>
+
+</body>
+</html>

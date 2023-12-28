@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript While Loop</h2>
+
+<p id="demo"></p>
+
+<script>
+let text = "";
+let i = 0;
+while (true) {  //while (i < 10)    //for(;true;)   //for(;;) //while(1)
+                //true 대신 0이 아닌 값을 사용할 수 있지만, true를 쓰는게 관례
+  text += "<br>The number is " + i;
+  i++;
+  if(i>=10)  break; //가장 가까운 반복문을 빠져나감
+
+}
+document.getElementById("demo").innerHTML = text;
+
+
+</script>
+
+</body>
+</html>

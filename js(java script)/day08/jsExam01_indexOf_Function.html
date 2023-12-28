@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>찾고자 하는 단어의 개수 세기</h1>
+    <script>
+        function searchWordCounting(sentence, searchWord){  //원문, 검색할 단어
+            let searchWordArray = [];
+            searchWordArray= (searchWord instanceof Array)? searchWord: searchWordArry.push(searchWord);    //push: 배열의 끝에 새로운 요소를 추가. 배열의 새로운 길이를 반환
+            console.log(searchWordArray);
+            let searchCountArr=[];
+
+            for(i=0; i<searchWordArray.length; i=i+1){  //검색할 단어의 개수만큼 반복.
+                let startPosition = 0;  
+                let searchWordCount = 0; 
+                let searchPosition= -999;
+
+                for(;(searchPosition=sentence.indexOf(searchWord, startPosition))!=-1;){
+                searchWordCount = searchWordCount + 1;
+                startPosition=searchPosition + 1;
+                };
+
+                searchCountArr.push(searchWordCount);
+            }
+            return searchCountArr;
+        }
+
+        let text= `aaa`;    //textarea, textbox(a,b,c), button을 사용해 만들어보기
+        let searchWord= [`a`];  //배열형태로 저장하면 for문의 오류 회피 가능
+        let result=searchWordCounting(text, searchWord);
+        for(i=0; i<result.length; i=i+1){
+            console.log(searchWord[i], "개수", result[i]);
+        }
+
+    </script>
+</body>
+</html>

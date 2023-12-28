@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>찾고자 하는 단어의 개수 세기</h1>
+    <script>
+        let sentence = "누구나 한 번 쯤은 사랑에 속고, 누구나 한 번 쯤은 사랑에 울고 그것이 바로 사랑 사랑이야";
+        let startPosition = 0;  //출발점의 위치
+        let searchWordCount = 0;    //찾는 단어의 개수를 세는 변수
+        let searchWord = "사랑";
+
+        while(true){
+            //검색을 했을 때 -1이 나온다면 더이상 찾는 단어가 없다->반복문 탈출(break)
+            let searchPosition = sentence.indexOf(searchWord, startPosition);
+            if(searchPosition==-1){ //더이상 찾는 단어가 없다
+                break;  
+            };
+            if(searchPosition!=-1){ //찾고자 하는 단어가 문장에 있다.
+                searchWordCount = searchWordCount + 1;
+                startPosition=searchPosition + 1;
+            };
+        }
+
+        //for(i=0; true; i=i+1){        //for(;true;)   //for(; ;)
+            //for(; "a" ;)        //0만 안쓰면 for는 무한루프
+        //    ...
+        //}
+        console.log("찾고자 하는 단어 "+searchWord+"의 개수는 ", searchWordCount);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="h2obj" class="h11">가나다</h2>
+    <h2 class="h11">마바사</h2>
+    
+    <script>
+        //let h11ClassCount = document.getElementsByClassName("h11").length
+        
+        var selObject = document.getElementsByClassName("h11");
+        var eleListSize = selObject.length;
+        for(i=0;i<eleListSize;i=i+1){
+            selObject[i].innerHTML="qwerty";
+        }
+        console.log(eleListSize);
+
+        // for(i=0;i<document.getElementsByClassName("h11").length; i=i+1){
+        //     document.getElementsByClassName("h11")[i].innerHTML="qwerty";
+        // }
+    </script>
+</body>
+</html>

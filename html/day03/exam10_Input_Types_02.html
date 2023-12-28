@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+   
+</head>
+<body>
+    <form action="aaa.jsp" method="get">   <!--전송불가, 전송을 받는 파일이 존재하지 않음-->
+        <input type="email" name="email" placeholder="메일을 입력해주세요" required value="@naver.com" /><span></span><br>  
+        <fieldset>
+            <legend>성별</legend>
+            <!-- (input#manwoman[type="radio" name="gender"]+label{남자여자}+br)*2 -->
+            <input type="radio" id="man" name="gender" value="man"><label for="man">남자</label><br>    <!--radio:1개만 선택, checkbox: 여러개 선택 label for: 클릭시 이동-->
+            <input type="radio" id="woman" name="gender" value="woman"><label for="woman"></label>여자</label><br>
+        </fieldset>
+        <hr/>
+        <!-- fileset>legend{취미}+(input#hb$$$[name="hobby" value]+label[for="hb$$$"]{취미$$}+br)*5 -->
+        <fileset>
+            <legend>취미</legend>
+            <input type="checkbox" id="hb001" name="hobby" value="mt"><label for="hb001">등산</label><br>
+            <input type="checkbox" id="hb002" name="hobby" value="spt"><label for="hb002">운동</label><br>
+            <input type="checkbox" id="hb003" name="hobby" value="mus"><label for="hb003">음악</label><br>
+            <input type="checkbox" id="hb004" name="hobby" value="bil"><label for="hb004">당구</label><br>
+            <input type="checkbox" id="hb005" name="hobby" value="etc"><label for="hb005">기타</label><br>
+        </fileset>  <!--하나의 속성으로 여러개의 데이터가 전달-->
+        <!--radio, checkbox: 선택하지 않으면 속성에서 빠짐, 오류발생가능
+            text: 선택하지 않으면 빈 값 전달-->
+
+        <input type="password" name="pwd" value="abc" hidden="aa" /> 
+        <input type="text" name="irum" value="홍길동" readonly="readonly" /> 
+        <!--hidden: 화면에는 표시되지 않지만, 전송시 url에 pwd의 value가 표시됨, readonly: 읽기전용-->
+        <input type="submit" value="자료전송">
+        <!-- <input type="submit" value="자료전송" />
+        <input type="reset" value="입력취소" />
+        <input type="button" value="버튼" />    ---input type -->
+        <!-- <button>인풋박스 아닌 버튼</button> ---input type 아님, submit 버튼과 동일 -->
+        <!-- form 태그 안의 버튼: 데이터를 전송하는 submit의 역할 -->
+    </form>
+    <hr /> <!--주제가 바뀌었음을 의미, 시각적으로는 줄 삽입-->
+    <!-- <button>인풋박스 아닌 버튼2</button> -->
+  
+
+</body>
+</html>

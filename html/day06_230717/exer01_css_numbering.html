@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+          counter-reset: section;       /*이름 통일*/
+        }
+        
+        h2::before {
+          counter-increment: section;   /*이름 통일*/
+          content: counter(section) ". ";
+          /*content: counters(section,".") " "; 계층별로 카운팅*/
+        }
+        </style>
+</head>
+<body>
+    <h1>1제목</h1>
+    <h1>2제목</h1>
+    <h1>3제목</h1>
+    <h1>3제목</h1>  <!--하나 삽입되면 아래를 다 바꿔야 함-->
+    <h1>4제목</h1>
+    <h1>5제목</h1>
+
+    <h2>제목</h2>
+    <h2>제목</h2>
+    <h2>제목</h2>
+    <h2>제목</h2>
+    <h2>제목</h2>
+    <h2>제목</h2>
+</body>
+</html>
+
+
+
+<!--/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table; 또는 block;
+  clear: both;
+}       -->
+
+<!--
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media all and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+-->

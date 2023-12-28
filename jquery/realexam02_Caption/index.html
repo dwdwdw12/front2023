@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>썸네일 포토 갤러리</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>   
+    
+    <style>
+        body{
+            margin: 20px auto;
+            padding: 0;
+            width: 650px;   
+            background-color: #192839;
+        }
+
+        .thumbs{
+            width: 110px;
+            float: left;
+        }
+
+        .thumbs img{
+            border: solid white 1px;
+            padding: 5px;
+            margin-top: 3px;    
+        }
+
+        .thumbs img:hover{
+            border-color: red;
+        }
+
+        #largeImg{
+            width: 500px;           
+            height: 280px;
+            padding: 5px;
+            border: solid white 1px;
+            margin-left: 110px;
+            overflow: hidden;
+        }
+        #caption{   /*주의하기*/
+            background: url(captionBg.png) repeat-y;    /*y축 방향으로 반복, 작은 이미지를 중첩시켜 배경을 만들기*/
+            position: relative;
+            color: white;
+            padding: 10px;
+            border: thin white 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="thumbs">
+        <a href="images/pic1.jpg" title="large1"><img src="images/th_pic1.jpg" alt="large1"></a>
+        <em>Lorem ipsum dolor sit amet consectetur adipisicing elit. </em>
+        <a href="images/pic2.jpg" title="large2"><img src="images/th_pic2.jpg" alt="large2"></a>
+        <em>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</em>
+        <a href="images/pic3.jpg" title="large3"><img src="images/th_pic3.jpg" alt="large3"></a>
+        <em>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</em>
+    </div>
+    <div id="largeImg">
+        <img src="images/pic1.jpg" alt="largeImg">
+    </div>
+    
+    <script>
+        $('.thumbs>em').hide();
+
+        $('.thumbs>a').on('click', function(e){
+            let duration = 500;
+            let $targetBoxImg = $('#largeImg>img');
+            let captionText= $(this).next("em").text();  //클릭한 부분의 캡션을 가져와야 함. 캡션(em)은 선택한 부분의 sibling. next로 선택.
+
+            $('#caption').remove(); //이미지를 선택할때마다 캡션이 쌓이기 때문에. overflow: hidden으로 감추더라도 div가 계속 생성
+            // console.log(captionText);
+            let imgPath = $(this).attr("href"); 
+            $targetBoxImg.attr({src : imgPath});
+
+            $targetBoxImg.css('opacity' , '0').stop().animate({'opacity': 1}, duration);    
+
+            e.preventDefault();   
+
+            $('#largeImg').append('<div id="caption"></div>');
+            $('#largeImg #caption').text(captionText);
+
+            let pos = $('#largeImg #caption').height()+20;    //캡션 상자의 높이를 설정, padding 때문에 추가적인 높이 20을 더 줌
+            $('#largeImg #caption').stop().animate({top: '-' + pos + 'px'}, duration-200);  //(margin) top, pos*(-1)
+        })
+    </script>
+</body>
+</html>

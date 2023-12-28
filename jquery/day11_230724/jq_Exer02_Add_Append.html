@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+    <h1>첫번째 jQuery 실습</h1>
+    <button>문단추가</button>
+  
+    <script>
+        let images=[aaa, bbb, ccc, ddd];
+
+        jQuery(function($){
+            //let createPtag = $("<p></p>").text("가나다라");
+            //$('body').append(createPtag); 
+            $('button').click(function(){
+                //$('body').append($("<p></p>").text("가나다라"));
+                $('body').append("<p>가나다라</p>");
+            });
+            
+        });
+        
+    </script>
+</body>
+</html>

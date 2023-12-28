@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <style>
+        nav>ul>li{
+            list-style: none;
+            display: inline-block;
+        }
+        
+        div#outer{
+            padding: 20px;
+            background-color:rgb(158, 167, 43);   
+        }
+
+        div>div{
+            border: 2px solid blue;
+            display: none;
+        }
+
+        div.show{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- nav>ul>(li>a{html css javascript jQuery})*4 -->
+    <nav>
+        <ul>
+            <li><a href="#html">html</a></li>
+            <li><a href="#css">css</a></li>
+            <li><a href="#javascript">javascript</a></li>
+            <li><a href="#jQuery">jQuery</a></li>
+        </ul>
+    </nav>
+
+    <div id="outer">
+        <div id="html" class="show">이 내용은 HTML관련 내용입니다 이 내용은 HTML관련 내용입니다 이 내용은 HTML관련 내용입니다 이 내용은 HTML관련 내용입니다 이 내용은 HTML관련 내용입니다</div>
+        <div id="css">이 내용은 CSS관련 내용입니다 이 내용은 CSS관련 내용입니다 이 내용은 CSS관련 내용입니다 이 내용은 CSS관련 내용입니다 이 내용은 CSS관련 내용입니다</div>
+        <div id="javascript">이 내용은 JAVASCRIPT관련 내용입니다 이 내용은 JAVASCRIPT관련 내용입니다 이 내용은 JAVASCRIPT관련 내용입니다 이 내용은 JAVASCRIPT관련 내용입니다 이 내용은 JAVASCRIPT관련 내용입니다</div>
+        <div id="jQuery">이 내용은 JQUERY관련 내용입니다 이 내용은 JQUERY관련 내용입니다 이 내용은 JQUERY관련 내용입니다 이 내용은 JQUERY관련 내용입니다 이 내용은 JQUERY관련 내용입니다 이 내용은 JQUERY관련 내용입니다</div>
+    </div>
+
+    <script>
+        //위 div#outer의 div#html에 .show를 붙이지 않아도 됨.
+        //$('div>div').hide();
+        //$('#html').show();
+        // $(`nav>ul>li>a`).click(function(){
+        //     let result = $(this).attr('href');
+        //     $('div>div').hide();
+        //     $(result).show(); 
+        //     return false;   
+        // })
+
+
+        $(`nav>ul>li>a`).click(function(){
+            let result = $(this).attr('href');  //attr: 속성값 가져오기
+            
+            //모든 실제 컨텐츠를 담고있는 div를 나타나지 않게 한다.
+            $('div>div').removeClass('show');
+
+            //나타내야 할 컨텐츠의 클래스 속성값에 show를 추가한다. => 스타일 정의에 의해서 화면에 나오게 된다.
+            $(result).addClass('show'); 
+            
+           
+            //console.log(result , "링크 태그를 클릭했네요");
+            return false;   //기본 속성(a, 링크기능)을 무시. 
+        })
+    </script>
+</body>
+</html>

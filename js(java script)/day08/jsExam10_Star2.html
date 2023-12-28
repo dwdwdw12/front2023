@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>별찍기</h1>
+    <script>
+         for(let i=0; i<5; i=i+1){                       
+            let starChar = "";                          
+            for(let j=0; j<i+1; j=j+1){                 
+                starChar = starChar+"*";                
+            }                                           
+           //console.log(i, starChar);
+        }             
+        // *
+        // **
+        // ***
+        // ****
+        // *****
+
+        for(let i=0; i<5; i=i+1){
+            let starChar2 = "";
+            for(let j=0; j<5-i; j=j+1){
+                starChar2 = " "+starChar2; 
+            }
+            for(let k=0; k<i+1; k=k+1){
+                starChar2 = starChar2 + "*";
+            }
+        //    console.log(i, starChar2);
+        }
+        //     *
+        //    **
+        //   ***  
+        //  ****
+        // *****
+
+        for(let i=0; i<3; i=i+1){
+            let starChar2 = "";
+            for(let j=0; j<i+1; j=j+1){
+                starChar2 = starChar2+" " 
+            }
+            for(let k=0; k<5-2*i; k=k+1){
+                starChar2 = starChar2 + "*";
+            }
+            console.log(i, starChar2);
+        }
+
+        for(let i=1; i>=0; i=i-1){
+            let starChar2 = "";
+            for(let j=0; j<i+1; j=j+1){
+                starChar2 = " "+starChar2
+            }
+            for(let k=0; k<5-2*i; k=k+1){
+                starChar2 = starChar2 + "*";
+            }
+            console.log(i, starChar2);
+        }
+        // *****
+        //  ***    
+        //   *
+        //  ***
+        // *****
+    </script>
+</body>
+</html>

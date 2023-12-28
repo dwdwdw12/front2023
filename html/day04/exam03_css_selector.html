@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  /* div*[class]{
+    font-size=1.50em;
+  } */
+.intro>.abc {       /*abc 모두 글자크기를 키우고 싶다*/
+  background-color: yellow;
+  font-size : 3em;
+}
+div .abc{       /*부분집합의 abc의 배경색을 바꾸고 싶다*/
+	background: yellow;
+}
+</style>
+</head>
+<body>
+
+<h1>Demo of the .class selector</h1>
+
+<div class="intro">
+  <p class="abc">My name is Donald.</p>
+  <p>I live <span class="abc">in</span> Duckburg.</p>
+</div>
+
+<p>My best friend is Mickey.</p>
+
+<p class="intro">My best <span class="abc">friend is </span>Mickey.</p>
+
+</body>
+</html>

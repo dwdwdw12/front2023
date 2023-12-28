@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>배열 사용 예제2</h1>
+    <script>
+        const arrData1= []; //리터럴을 이용해서 배열만 생성.
+        console.log(arrData1.length);
+        let rtnValue = arrData1.push(123);
+        console.log(arrData1.length, rtnValue, arrData1);
+
+        rtnValue = arrData1.push(function(){alert('가나다라')});    //f:함수
+        console.log(arrData1.length, rtnValue, arrData1);
+
+        arrData1.push({         //{...}:객체
+            irum: '홍길동',
+            jumsu: [91, 12, 75, 82, 100],   //arrData[2].jumsu[4]
+            address: 'suwon'        //arrData[2].address
+        });    
+        console.log(arrData1.length, rtnValue, arrData1);
+
+        //배열에 저장된 두번째 자료(index=1)을 꺼내기(읽기)
+        console.log(arrData1[1]);   //읽었을때 그 내용이 함수였다.
+
+        //함수 호출 연산자=>() => 함수명+함수 호출 연산자
+        //arrData1[1]();
+
+        console.log(arrData1[2].irum);  // . : go
+        console.log(arrData1[2]['iru'+'m']);   // 문자열을 이용한 접근, 문자열의 연산이 가능
+        console.log("==================");
+        console.log(arrData1[2].address);
+        console.log("윤리 점수: ",arrData1[2].jumsu[4]);
+        arrData1[2].jumsu[4] = 95;
+        console.log("수정된 윤리 점수: ",arrData1[2].jumsu[4]);
+        
+
+        //=========================================================
+        function abc(){
+            console.log("새벽 종이 울렸네");
+            console.log("새 아침이 밝았네");
+            console.log("백두산에 푸른정기 이땅을 수호하고");
+        };
+        console.log("=====", abc);
+
+        let abcd = function(){      //익명의 함수-> 변수에 저장
+            console.log("새벽 종이 울렸네");
+            console.log("새 아침이 밝았네");
+            console.log("백두산에 푸른정기 이땅을 수호하고")
+        }
+        console.log("*****", abcd);
+    </script>
+</body>
+</html>

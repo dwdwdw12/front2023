@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script>
+        document.getElementById("h2obj").innerHTML = "ABC";
+        document.write("EFG");  맨 처음에 추가
+    </script>  위에서 아래로 코드를 읽음. h2obj값이 없으므로 innerHTML을 변경할 수 없음, error발생 -->
+</head>
+<body>
+    <h2 id="h2obj" class="h11">가나다</h2>   <!--가나다:inner HTML, js는 대소문자 구분--> 
+    <h2 class="h11">마바사</h2>             <!--document-->
+    <script>
+        document.getElementById("h2obj").innerHTML = 50/3; /*"ABC", id는 유일*/
+
+        document.write("EFG");  /*맨끝에 추가*/
+        /*console.write("XYZ"); console.write is not a function*/
+        console.log("XYZ");
+       
+        // document.getElementsByClassName();
+        // document.querySelector(".h1");
+        //선택한 클래스 속성의 개수만큼 반복
+       
+        /*for(i=0; i<document.querySelectorAll(".h11").length; i=i+1) {
+        document.querySelectorAll(".h11")[i].innerHTML="qwerty";
+       }*/
+       
+        //document.querySelectorAll(".h11")[1].innerHTML="qwerty";    /*여러개, 0번째부터 시작*/
+        //document.querySelectorAll(".h11")[0].innerHTML="qwerty"; 일일히 코드를 반복하는 경우, 유지보수불리
+    </script> <!--마지막에 넣어주는게 좋음-->
+</body>
+</html>
+
+<!--
+    console.log(document.getElementById("h2obj").innerHTML) 
+    document-h2obj 내부의 내용을 console에 표시
+    
+    document.getElementById("h2obj").innerHTML="ABC"
+    내용을 ABC로 변경
+-->

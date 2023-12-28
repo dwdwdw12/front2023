@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript For Loop</h2>
+
+<p id="demo"></p>
+
+<script>
+const cars = ["BMW", "Volvo", "Saab", "Ford"];
+let i, j, len, text;
+// for (i = 0, len = cars.length, text = ""; i < len; i++) {
+//   //text += cars[i] + "<br>";
+//     text+=(car[i]+"<br>");  //태그 추가 방식 확인
+// }
+// document.getElementById("demo").innerHTML = text;
+
+for (i = 0, len = cars.length, text = "", j=1; i < len; i++, j=j+1) {
+  //text += cars[i] + "<br>";
+    text+=(j + car[i]+"<br>");  //태그 추가 방식 확인
+}
+document.getElementById("demo").innerHTML = text;
+</script>
+
+</body>
+</html>

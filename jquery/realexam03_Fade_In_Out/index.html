@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FadeInOut 갤러리</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>   
+
+    <script>
+        $(document).ready(function(){       //문서를 다 읽을 때까지 대기
+            let showImg, nextImg;
+            //let i=0;
+            //setInterval(fadeInOut, 2000);   //fadeInOut()-> 실행x
+            //setInterval: 창이 꺼질때까지 계속 실행, clearInverval로 처리하는 방법이 있음
+            function fadeInOut(){   
+                //i=i+1;
+                //console.log(`${i}번째 콘솔 화면의 문자열입니다.`);
+                showImg = $('.fadeShow img:eq(0)'); //첫번째 이미지 객체 선택 <= 현재 보여지는 이미지 객체
+                nextImg = $('.fadeShow img:eq(1)'); //두번째 이미지 객체 선택 <= 다음에 보여질 이미지 객체  
+                //img: eq(1) x  img:eq(1)  o
+                nextImg.addClass("active");
+                nextImg.css({opacity: 0}).stop().animate({opacity: 1}, 1000, function(){
+                    $('.fadeShow').append(showImg);
+                    showImg.removeClass("active");
+                }); //애니매이션 동작이 끝나면 할 일을 정의
+            }
+            let timer = setInterval(fadeInOut, 3000);
+            $('div.fadeShow').hover(
+                function(){
+                    clearInterval(timer);
+                },
+                function(){
+                    timer = setInterval(fadeInOut, 3000);
+                }
+            );
+            //fadeInOut();
+        });
+    </script>
+
+    <style>
+        body{
+            margin: 20px auto;
+            padding: 0;
+            width: 625px;   
+            background-color: #192839;
+        }
+        
+        .fadeShow{
+            width: 600px;
+            border: 2px solid white;
+            height: 350px;
+            position: relative;
+        }
+
+        .fadeShow img{
+            position: absolute; /*3개의 이미지가 겹쳐있음. 뒤에 있는 이미지가 제일 위에 위치*/
+        }
+
+        .fadeShow img.active{
+            z-index: 1; /*class가 붙은 이미지를 맨 위에 올림 */
+        }
+    </style>
+</head>
+<body>
+    <div class="fadeShow">
+        <img src="images/slide1.jpg" alt="images1" class="active">
+        <img src="images/slide2.jpg" alt="images2">
+        <img src="images/slide3.jpg" alt="images3">
+        <!-- alt+클릭: 커서를 여러 곳에 위치 -->
+    </div>
+    <script>
+
+    </script>
+</body>
+</html>

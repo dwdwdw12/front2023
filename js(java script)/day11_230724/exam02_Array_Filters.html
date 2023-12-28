@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Arrays</h1>
+<h2>The filter() Method</h2>
+
+<p>Create a new array from all array elements that passes a test:</p>
+
+<p id="demo"></p>
+
+<script>
+const numbers = [45, 4, 9, 16, 25, 'aa', 'bb'];
+const over18 = numbers.filter(myFunction);
+
+document.getElementById("demo").innerHTML = over18;
+
+function myFunction(value, index, array) {
+  if(typeof value === 'string'){        //===, !==
+  return value;
+  //return typeof value ==='string'
+  }
+}
+
+const numbers2 = [10,20,"15cm","12g"];
+const filterNum = numbers.filter(myFunction2);
+
+document.getElementById("demo").innerHTML = filterNum;
+
+//function myFunction2(){return parseInt(value)};  for문 써야 할 듯?
+
+</script>
+
+</body>
+</html>

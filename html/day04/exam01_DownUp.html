@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{         /*id*/
+            width: 1200px;
+            margin: 0 auto; /*div를 가운데정렬*/
+            border: 3px solid black;
+            padding: 15px;
+        }
+        .box{
+            border: 1px solid tomato;
+            padding: 10px;
+        }
+        .contentOutBox{
+            border: 3px solid greenyellow;
+        }
+        img{
+            width: 300px; height: 250px;
+            border: 2px dotted grey;
+            padding: 5px;
+        }
+        li{
+            list-style: none;   /*목록 모양->없음*/
+            display: inline-block;
+            width: 250px;
+            background-color: aquamarine;
+            color: blue;
+            padding: 7px;   /*안쪽 여백*/
+            font-size: 1.5em;   /*글자 크기 1.5배*/
+            text-align: center;
+        }
+        li:hover{
+            background-color: blue;
+            color: aquamarine;
+        }
+    </style>    <!--list-sylte: 메뉴 ul 앞의 기호, li:hover-마우스를 올릴 때 적용되는 스타일, 1.5em: 원래 글자크기의 150%-->
+</head>
+
+<body>
+    <div id="container">
+        <!-- div.box.headerBox>img+h1{Sun} -->
+        <div class="box headerBox">
+            <img src="./images/sun.png" alt="logo" title="logo" />
+            <h1>Sun Microsystems</h1>
+        </div>
+
+        <div class="box contentOutBox">
+            <!-- div.box.navbox>nav>ul>li{메뉴$$$}*5 -->
+            <div class="box navbox">
+                <nav>
+                    <ul>
+                        <li>메뉴001</li>
+                        <li>메뉴002</li>
+                        <li>메뉴003</li>
+                        <li>메뉴004</li>
+                        <li>메뉴005</li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- div.box.imgBox -->
+            <div class="box imgBox">
+                <img src="./images/flower01.jpg" alt="red flower" title="red flower" >
+                <img src="./images/flower02.jpg" alt="blue flower" title="blue flower">
+                <img src="./images/flower03.jpg" alt="pink flower" title="pink flower" >
+            </div>
+
+            <div class="box formBox">
+                <form action="aaa.jsp" method="get">
+                    <fieldset>
+                        <legend>필수입력</legend>
+                        <!-- 이름을 입력받는다->텍스트 입력박스 -->
+                        <label for="irum">성 명 </label><input type="text" id="irum" name="irum"/><br />
+                        <!-- 아이디를 입력받는다->텍스트 입력박스 -->
+                        <label for="memId">아이디 </label><input type="text" id="memId" name="memId"/><br /><!--label과 id를 일치시킴. 편의상 name과도 일치시킴.-->
+                        <!-- 패스워드를 입력받는다->텍스트 입력박스(화면에 입력된 글자가 나오면 안됨) -->
+                        <label for="memPwd">비밀번호 </label><input type="password" id="mempPwd" name="memPwd"/><br />
+                        <!-- 패스워드 확인 입력받기->텍스트 입력박스(화면에 입력된 글자 출력x) -->
+                        <label for="memPwdCk">비밀번호 확인 </label><input type="password" id="memPwdCk" /><br />
+                    </fieldset> 
+                    <hr />
+
+                    <fieldset>
+                        <legend>선택입력</legend>
+                        <label for="memAge">나이 </label><input type="number" id="memAge" name="memAge"/><br />
+                        <!-- 생년월일->날짜형식 입력상자 -->
+                        <label for="memBir">생년월일 </label><input type="date" id="memBir" name="memBir"/><br />
+                        <!-- 주소->텍스트 입력박스 -->
+                        <label for="memAddr">주소 </label><input type="text" id="memAddr" name="memAddr"/><br />
+                        <!-- 이메일->메일형식의 입력상자 -->
+                        <label for="memEmail">메일주소 </label><input type="email" id="memEmail" name="memEmail"/><br />
+                        <!-- 성별->radio형태 입력 -->
+                        <fieldset>
+                            <legend>성별</legend>
+                            <label for="man">남자</label>
+                            <input type="radio" id="man" name="gender" value="man">&nbsp;&nbsp;&nbsp;
+                            <label for="woman">여자</label>
+                            <input type="radio" id="woman" name="gender" value="woman">
+                        </fieldset>
+                        <!-- 관심사항=>check박스 형태 입력(왜 이항목을 입력받을까?<=판매되는 카테고리별 관심도를 활용하기 위해서=>관심도에 따라서 맞춤형 정보를 제공해주기 위함) -->
+                        <fieldset>
+                            <legend>관심카테고리</legend>
+                            <input type="checkbox" id="item1" name="aaaa" value="ele">
+                            <label for="item1">가전제품</label>&nbsp;&nbsp;&nbsp;
+                            <input type="checkbox" id="item2" name="aaaa" value="spt">
+                            <label for="item1">스포츠용품</label>&nbsp;&nbsp;&nbsp;
+                            <input type="checkbox" id="item3" name="aaaa" value="food">
+                            <label for="item1">식료품</label>&nbsp;&nbsp;&nbsp;
+                        </fieldset>
+                    </fieldset>
+                    <input type="submit" value="회원가입">&nbsp;&nbsp; <input type="reset" value="입력취소">
+                </form>
+            </div>
+        </div>
+        
+        <!-- div.box.footerBox>p{Sun Microsystems}+address{경기도 수원시 팔달구} -->
+        <div class="box footerBox">
+            <p>Sun Microsystems</p>
+            <address>경기도 수원시 팔달구 매산로 1번길 123-12</address>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- http://127.0.0.1:
+    5500/day04/aaa.jsp
+    포트번호/라이브서버가 호출하는 파일?전송하는 정보(이름, 아이디, ...)
+    ?irum=%ED%99%8D%EA%B8%B8%EB%8F%99
+    한글-16진수변환// 3byte 홍// 길 // 동 //
+    &memId=hong
+    &memPwd=hong123
+    &memBir=2023-07-13
+    &memAddr=%EC%88%98%EC%9B%90
+    &memEmail=aaa%40naver.com
+    &gender=man
+    &aaaa=ele
+    &aaaa=spt           9개의 자료, 8개의 상자+1개 추가(memage)-->
+
+    <!-- open with live-server, alt+l -->

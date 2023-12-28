@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>for 구문 연습</h1>
+    <script>
+        let numArr=[1,2,3,4,5];
+        let s=0;
+        for(let aa of numArr){
+            s=s+1;
+            console.log(s, "번째 배열의 값: ",aa);    //배열 안의 내용을 하나씩 출력
+        };  //간단하게 사용할 수 있다는 장점, 단점->index를 사용할 수 없다.
+
+        console.log("=========구분=========")
+
+        let k=numArr.length;
+        for(let i=0; i<k; i=i+1){   //i<numArr.length: 안티 패턴, 조건문이 너무 많이 실행되어 성능저하.
+                                //.length를 미리 다른 변수에 담아둔 후, 그 변수를 사용하는 것이 바람직.
+            console.log(i+1, "번째 배열의 값: ", numArr[i]); //출력 구문 작성이 편리(첫번째~입니다)
+        };
+    </script>
+</body>
+</html>

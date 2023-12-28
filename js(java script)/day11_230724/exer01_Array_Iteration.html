@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="demo">배열 반복자 관련 함수 학습</h1>
+
+    <script>
+        //배열명(자료가 있는).map/forEach/filter/reduce... 등의 함수가 있다
+        //반복자 함수를 호출할 때 첫번째 값으로 함수를 전달한다. =>만들어진 함수에 의해서 처리결과가 생성된다.
+        //만들어진 함수의 매개변수에는 어떤 것들이 있고 어떤 값들이 사용되는지 알아야한다. => 알아내는 방법
+
+        let arrData1 = [10, 20, 30, 40, 50, 60, 70];
+        arrData1.filter(function(){
+            console.log(arguments.length)   //3을 반환, 매개변수는 3개 줌
+            console.log("1번째 매개변수로 전달한 자료: ", arguments[0], "2번째 매개변수로 전달한 자료: ", arguments[1], "3번째 매개변수로 전달한 자료: ", arguments[2]) //value, index, array
+        })
+
+        let = arrData=[1,2,3,4,5,'6',7,8,'9',10,11,12,13,14,15,16,17,18,19,20];
+        //위의 배열 중에 3의 배수이면서 짝수인 순수한 숫자 자료를 추출하시오
+        //아래 함수에서 typeOf를 사용하여 추출
+        // const filterNum = numbers.filter(arrData);
+        // document.getElementById("demo").innerHTML = myFunction;
+        // function myFunction(){
+        //     if(value%3==0 && value%3&1==0){
+        //         return value;
+        //         }
+        //     }; 
+        let result3 = arrData.filter(function(value){
+            return value%3 ===0;
+        }).filter(function(value){
+            return value%2 ===0;            //메서드 체인
+        }).filter(function(value){
+            return typeof value === 'number';
+        });
+        console.log("result3= ",result3.toString());
+        //위의 배열 중에 3의 배수이면서 짝수인 숫자로 해석할 수 있는 자료를 추출하시오.
+
+        let result = arrData.filter(function(value){
+            return value%6 === 0;
+        });
+        console.log("result= ",result.toString());
+
+        let result2 = arrData.filter(function(value){
+            return value%3 ===0;
+        }).filter(function(value){
+            return value%2 ===0;            //메서드 체인
+        });
+        console.log("result2= ",result2.toString());
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>템플릿 리터럴 사용 예제</h1>
+    <script>
+        let iname = `홍길동`;
+        let age = 250;
+        let address = `율도국`;
+        console.log('나의 이름은 : ' + iname + " 나의 나이는 " + age + " 나의 주소는"  + address + " 입니다.");
+        console.log("백틱을 이용하면");
+        console.log(`나의 이름은 :  iname +  나의 나이는  age  나의 주소는  address 입니다.`);
+
+        console.log(`나의 이름은 :  ${iname} +  나의 나이는  ${age}  나의 주소는  ${address} 입니다. 함수호출결과 ${rtnData()}입니다.`);    //함수도 호출할 수 있음을 기억
+
+        function rtnData(){
+            return '가나다라';
+        };
+        
+    </script>
+</body>
+</html>

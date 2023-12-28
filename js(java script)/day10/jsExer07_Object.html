@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>객체</h1>
+    <script>
+        //객체는 메모리상에 만들어진 관련성있는 자료(==속성) n개의 묶음. 
+        //배열: 같은 종류의 자료가 묶여져 있음. 객체의 일종
+        //묶음의 자료를 처리하는 동작(함수)을 가질 수 있다.
+        
+        // let obj111={
+        //     irum111: "홍길동",     //데이터만 들어있는 객체(함수는 없음)
+        //     korJumsu111: 98,       //VO(value object) 객체
+        //     engJumsu111: 12,
+        //     matJumsu111: 75
+        // }
+
+        let obj1={
+            irum: "홍길동",             //멤버변수(c++), 아이템/필드(java)
+            korJumsu: 98,       
+            engJumsu: 12,
+            matJumsu: 75,
+            total: function(){          //메서드, 멤버함수(c++)
+                return this.korJumsu + this.engJumsu+ this.matJumsu;
+            }
+        }
+
+        let obj2={
+            irum: "길동",             
+            korJumsu: 90,       
+            engJumsu: 50,
+            matJumsu: 70,
+            total: function(){          
+                return this.korJumsu + this.engJumsu+ this.matJumsu;
+            }
+        }
+
+        let obj3={
+            irum: "동",             
+            korJumsu: 80,       
+            engJumsu: 40,
+            matJumsu: 50,
+            total: function(){          
+                return this.korJumsu + this.engJumsu+ this.matJumsu;
+            }
+        }
+
+        function studentFun(a,b,c,d){
+            return {
+                irum: a,
+                korJumsu: b,
+                engJumsu: c,            //클래스
+                matJumsu: d,
+                total: function(){          
+                    return this.korJumsu + this.engJumsu+ this.matJumsu;
+                }
+            }
+        }
+        
+        class student{
+            //String irum; int korJumsu; ... java 문법
+            //constructor(){}
+            constructor(irum, korJumsu, engJumsu, matJumsu){
+                this.irum=irum;
+                this.korJumsu=korJumsu;
+                this.engJumsu=engJumsu;
+                this.matJumsu=matJumsu;
+            }
+            total(){  //total= function(){
+                return this.korJumsu + this.engJumsu+ this.matJumsu;
+            }
+        } //활용도 떨어짐
+        let obj5= studentFun("이", 30, 40, 50);
+        let obj6= new student("박", 50, 60, 70);
+
+        console.log("1번째 만든 객체: ", obj1);
+        console.log("2번째 만든 객체: ", obj2);
+        console.log("3번째 만든 객체: ", obj3);
+        console.log("5번째 만든 객체: ", obj5);
+        console.log("6번째 만든 객체: ", obj6);
+
+        let m=(a,b,c,d) => {
+            return a+b+c+d;
+        }
+
+        //let k=(a,b,c,d) => let jjj= (return) a+b+c+d;   return이 생략되어 있으므로, 2개의 문장이 들어가 있음. 대괄호를 통해 묶어주어야 함.
+        let k=(a,b,c,d) => {let jjj= a+b+c+d;}; //하나의 문장이지만 집합기호가 사용됨. 컴퓨터는 2개의 문장으로 인식하고 return문을 자동으로 삽입함.
+        //let k=(a,b,c,d) => {return a+b+c+d;};
+        console.log("=============>",k(10,20,30,40));
+        console.log("k에 저장된 자료: ",k);
+       // console.log("jjj에 저장된 자료: ",jjj);
+
+        let kOne= (a) => {return a*2;};     //람다식 함수표현
+        
+
+    </script>
+</body>
+</html>

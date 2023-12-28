@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript String Methods</h1>
+<p>Display the first array element, after a string split:</p>
+
+<p id="demo"></p>
+
+<script>
+let text = "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=qwert";
+const myArray = text.split("?");
+document.getElementById("demo").innerHTML = myArray[0]; //split을 통해 도메인, 호스트, 파라미터 등을 파악하기 쉬움 
+</script>
+
+</body>
+</html>

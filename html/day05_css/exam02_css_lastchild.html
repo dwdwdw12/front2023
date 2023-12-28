@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+p:nth-last-child(2) {   /*nth-last-of-type: 같은 타입만 counting*/
+  background: red;
+} 
+div{border:2px solid green;}
+</style>
+</head>
+<body>
+
+<p>The first paragraph.</p>
+<section>aa</section>
+<div>
+<p>The second paragraph.</p>
+<p>The third paragraph.</p>     <!--뒤에서 2번째 child지만, p가 아님, 건너뛰지 못함-->
+</div>
+<p>The fourth paragraph.</p>
+
+</body>
+</html>

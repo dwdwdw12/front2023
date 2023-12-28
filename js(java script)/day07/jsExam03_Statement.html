@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>abcd</p>
+
+    <script>
+        var varK = 50;  //let varK=50;
+        var varK = 500; //let varK=500; ->error, var과 다르게 let는 재선언 불가.
+        console.log(varK);
+
+        for(var m=20; m<21; m=m+1){
+
+        }
+        console.log(window.m); //반복문의 변수를 var m로 선언한 후에 반복문 밖에서 사용해 보았다. 문제없이 사용된다.
+        //window. : 변수가 소속된 곳. 기본적으로 적용되므로 생략가능.
+
+       // for(let j=20; j<21; j=j+1){
+
+       // }
+       // console.log(j); //Uncaught ReferenceError: j is not defined
+        //반복문의 변수를 let j로 선언한 후에 반복문 밖에서 사용해 보았다. 사용할 수 없다.(반복문 밖에서 소멸)
+
+        let aa,bb,cc;   //선언, 블록변수
+        let i=20,j=30;k=70;     //선언+할당. 권장하지 않음. 안티패턴, 따로 떼어내기.
+    </script>
+    
+</body>
+</html>

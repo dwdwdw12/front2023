@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>함수2</h1>
+    
+    <script>    //오버로딩의 사례 
+        aaa(1,2,3,4,5);     //아래 함수가 hoisting, 실행 전에 끌어올려짐.
+        function aaa(a, b, c){
+            console.log(a + b + c);
+        };
+
+        function aaa(aa, bb, cc, dd, ee){       //같은 함수. 변수의 개수가 다름
+            console.log(aa + bb + cc + dd+ ee);
+        }
+        
+        let bbb = function(a,b,c){
+            console.log(a+ b+ c);
+        }
+
+        bbb(1,2,3,4,5); //뒤의 두개의 숫자는 생략
+
+        let ccc= function(a,b,c){
+            console.log(a+b+c+arguments[3]+arguments[4]);
+        };  //arguments: 유사 배열, 일단 값을 받음.
+        ccc(1,2,3,4,5);
+
+        // let bbb = function(aa,bb,cc,dd,ee){ //let->같은 이름으로 선언불가
+        //     console.log(aa+bb+cc+dd+ee)
+        // }
+
+        //aaa(1, 1, 1);   // NaN, 아래 aaa를 받음. aaa(1,1,1,undefined,undefined)
+        //aaa(11, 22, 33, 44, 55);
+
+        console.log("===================")
+        
+        
+        console.log(yyyy);  
+        yyyy=200;   //호이스팅, 위로 올라가서 선언만 됨.    //let, var에 따라 다르게 나옴
+
+        aaa(function(){console.log("가나다라마바")});
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+    <h1>첫번째 jQuery 실습</h1>
+    <p>나의 살던 고향은</p>
+    <p>ABCDE</p>
+    <button>바꾸기</button>
+    <script>
+        // $('button').click(function(){
+        //     $('p').text("가나다라");
+        //     //$(this).text("가나다라");
+        // });
+        
+
+
+        // let eventName = 'click';
+        // let jQ = jQuery;
+        // //$('p').on(eventName,function(){   //$=jQuery, 다른 라이브러리와 겹치면 충돌발생, $ 사용이 힘들어짐
+        // jQ('p').on(eventName,function(){   
+        // //click 대신 on으로 변경
+        // //'click'은 문자열이므로 변수에 담을 수 있음, 자유롭게 사용가능.
+        //     let selObj = jQ(this);   //this->지금 하는 동작에 대해
+        //     selObj.text("가나다라");   
+        // });
+
+
+        let eventName = 'click';
+        //jQuery(document).ready(function($){
+        jQuery(function($){
+            $('p').click(function(){
+                $(this).text("마바사아");
+            });
+        });
+        
+    </script>
+</body>
+</html>

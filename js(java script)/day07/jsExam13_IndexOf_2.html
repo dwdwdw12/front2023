@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>찾고자 하는 단어의 개수 세기</h1>
+    <script>
+        let sentence = "누구나 한 번 쯤은 사랑에 속고, 누구나 한 번 쯤은 사랑에 울고 그것이 바로 사랑 사랑이야";
+        let startPosition = 0;  
+        let searchWordCount = 0;    
+        let searchWord = "사랑";
+
+        let searchPosition= -999;   //indexOf로 반환되는 값과 겹치지만 않으면 숫자는 상관없음
+        //for(;(searchPosition=sentence.indexOf(searchWord, startPosition))!=-1);)
+        while((searchPosition=sentence.indexOf(searchWord, startPosition))!=-1){
+            searchWordCount = searchWordCount + 1;
+            startPosition=searchPosition + 1;
+        };
+        console.log("찾고자 하는 단어 "+searchWord+"의 개수는 ", searchWordCount);
+        
+
+    </script>
+</body>
+</html>

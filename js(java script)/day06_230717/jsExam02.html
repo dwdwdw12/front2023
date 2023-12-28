@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="h2obj" class="h11">가나다</h2>
+    <h2 class="h11">마바사</h2>
+    <script>
+         // document.getElementsByClassName();
+        // document.querySelector(".h1");
+        //선택한 클래스 속성의 개수만큼 반복
+       
+        for(i=0; i<document.querySelectorAll(".h11").length; i=i+1) {
+        document.querySelectorAll(".h11")[i].innerHTML="qwerty";
+       }
+       
+        //document.querySelectorAll(".h11")[1].innerHTML="qwerty";    /*여러개, 0번째부터 시작*/
+        //document.querySelectorAll(".h11")[0].innerHTML="qwerty"; 일일히 코드를 반복하는 경우, 유지보수불리
+    </script>
+</body>
+</html>

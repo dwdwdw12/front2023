@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>배열 사용 예제2</h1>
+    <script>
+        const arrData1= []; //리터럴을 이용해서 배열만 생성.
+        console.log(arrData1.length);
+        let rtnValue = arrData1.push(123);
+        console.log(arrData1.length, rtnValue, arrData1);
+
+        rtnValue = arrData1.push(function(){console.log('가나다라')});    //f:함수
+        console.log(arrData1.length, rtnValue, arrData1);
+
+        arrData1.push({         //{...}:객체
+            irum: '홍길동',
+            jumsu: [91, 12, 75, 82, 100],   //arrData[2].jumsu[4]
+            address: 'suwon'        //arrData[2].address
+        });    
+
+        var objName=['irum', 'jumsu', 'address'];
+        for(let i=0; i<objName.length; i=i+1){
+            console.log("반복문으로 객체의 자료를 출력하기",arrData1[2][objName[i]]);       //문자열을 이용한 접근 응용, 배열이 복잡한 경우에 사용가능
+        };
+
+        console.log(arrData1[2].irum);  // . : go
+        console.log(arrData1[2]['iru'+'m']);   // 문자열을 이용한 접근, 문자열의 연산이 가능
+       
+        
+    </script>
+</body>
+</html>

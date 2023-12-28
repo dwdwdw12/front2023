@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Arrays</h1>
+<h2>The reduce() Method</h2>
+
+<p>Find the sum of all numbers in an array:</p>
+
+<p id="demo"></p>
+
+<script>
+const numbers = [45, 4, 9, 16, 25]; //배열의 개수가 5개일때
+let sum = numbers.reduce(myFunction); //배열을 하나의 원하는 값으로 반환
+                                      //하둡- Map reduce
+
+//let sum = numbers.reduce(myFunction, 200); //total의 초기값으로 200이 대입됨. -> 수행횟수가 1번 늘어남
+
+document.getElementById("demo").innerHTML = "The sum is " + sum;
+
+function myFunction(total, value, index, array) { //45와 4가 total과 value의 초기값으로  대입됨.
+  console.log("수행 횟수: ", index);  //4번 수행 됨.
+  return total + value;
+}
+</script>
+
+</body>
+</html>

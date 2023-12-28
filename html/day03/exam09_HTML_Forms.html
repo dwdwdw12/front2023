@@ -1,0 +1,24 @@
+<!DOCTYPE html> <!--w3schools HTML Forms-->
+<html>
+<body>
+
+<h2>HTML Forms</h2>
+
+<form action="/action_page.php" method="get">   <!--method: 데이터를 전달하는 방식, get: url에 표시. 상대의 응답을 기다림, post: url/화면에 내용을 숨김, 비밀유지. 응답을 기다리지 않음-->
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" value="John"><br>  <!--name이라는 속성을 통해 데이터를 전달, value="": 초기값, 없으면 사용자가 직접 입력-->
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+  <input type="submit" value="Submit">  <!--모든 데이터를 전달하겠다-->
+  <!-- <label for="dname">dddd:</label><br>
+  <input type="text" id="dname" name="dname"><br><br> -->
+</form> 
+
+<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+
+</body>
+</html>
+
+<!-- https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=qwert                          1          2          3          4 
+?: 뒤에 자료들이 등장
+1,2,3,4: 속성과 속성값, 데이터들. -->

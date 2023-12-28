@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let guestname = prompt("이름을 입력해주세요: ");
+        alert(`${guestname}님 방문을 환영합니다.`);
+
+        $(document).ready(
+        //메일 section 안쪽의 article 태그에 <-작업대상 선택 $('')
+        //마우스가 올라가면  <-사용자가 행하는 동작 jqyery 함수로 만들어 놓음. mouseover
+        //article 태그에 테두리선을 그어주세요. <-동작 <-이벤트 메서드의 함수로 작성한다.
+        function(){
+        $(".mainConstentSec>article").mouseover(function(){
+            $(this).css("background-color", "yellow"); //마우스가 올라간 경우에
+        }).mouseout(function(){
+            $(this).css("background-color", "#ffffff"); //마우스가 내려갔을 때
+          })
+        });
+    </script>
+</body>
+</html>

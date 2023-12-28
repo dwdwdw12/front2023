@@ -1,0 +1,95 @@
+.slideshow{
+    background-color: rgb(0,0,0);
+    height: 465px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slideshow-slides{
+    position: absolute;
+    height: 100%;       /*부모의 크기를 맞춤*/
+    width: 100%;
+}
+
+.slideshow-slides .slide{
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+}
+
+.slideshow-slides .slide img{
+    left: 50%;
+    margin-left: -800px;
+    position: absolute;
+}
+
+.slideshow-nav a, 
+.slideshow-indicator a{
+    overflow: hidden;
+}
+
+.slideshow-nav a:before,/*:before, 요소 내용 앞쪽에 새 컨텐츠를 추가하는 가상선택자*/
+.slideshow-indicator a:before{
+    content: url(../img/sprites.png);   /*상대경로, ../ 현재 위치의 상위폴더
+                                                    ./ 현재 위치*/
+    display: inline-block;
+}
+
+.slideshow-nav a{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 72px;
+    height: 72px;
+    margin-top: -36px;              /*Prev, Next의 위치 지정(y축)*/
+}
+
+.slideshow-nav a.prev{    
+    margin-left: -550px;
+}
+
+.slideshow-nav a.prev:before{
+    margin-top: -20px;              
+}
+
+.slideshow-nav a.next{
+    margin-left: 500px;             /*Prev, Next의 세부 위치 지정(x축)*/
+}
+
+.slideshow-nav a.next:before{
+    margin-top: -20px;
+    margin-left: -80px;         /*이미지의 크기를 고려하여 픽셀 입력*/
+}
+
+.slideshow-nav a.disabled{      /*클래스 이름이 추가될 경우, 다음 행동을 취함*/
+    display: none;
+}
+
+.slideshow-indicator{
+    bottom: 30px;
+    position: absolute;
+    height: 16px;
+    left: 0;
+    right: 0;
+    text-align: center;             /*image sprite 세부 설정*/
+}
+
+.slideshow-indicator a{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 0 5px;
+}
+
+.slideshow-indicator a.active{
+    cursor: default;
+}
+
+.slideshow-indicator a:before{
+    margin-left: -110px;                    /*image sprite 세부 설정*/
+}
+
+.slideshow-indicator a.active:before{
+    margin-left: -130px;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <style>
+        #imgGroup{
+            border: 2px solid tomato;
+        }
+    </style>
+</head>
+<body>
+    <h1>첫번째 jQuery 실습</h1>
+    <div id="imgGroup"></div>
+    <!-- <button>이미지 추가</button> -->
+  
+    <script>
+        let images=[{filename: "aaa", title: "장미 이미지"}, {filename: "bbb", title: "백합 이미지"}];
+
+        jQuery(function($){
+           // $('button').click(function(){
+                let imgTagHtml= "";
+                for(let i=0; i<images.length; i=i+1){
+                    imgTagHtml=imgTagHtml+'<img src="'+images[i].filename+'.jpg" alt="이미지" title="'+images[i].title+'"/></br>';//<img src="aaa"
+
+                }
+                $('#imgGroup').append(imgTagHtml);
+            });
+        //});
+        
+    </script>
+</body>
+</html>

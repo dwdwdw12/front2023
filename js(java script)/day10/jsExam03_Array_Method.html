@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Arrays</h1>
+<h2>The pop() Method</h2>
+
+<p>The pop() method removes the last element from an array.</p>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1").innerHTML = fruits;
+alert(fruits.pop());    //pop: 배열의 마지막 값 제거 후, 해당 값을 반환.
+//fruits.length--; 맨 뒤의 값 제거
+document.getElementById("demo2").innerHTML = fruits.toString(); //toString()은 자동으로 입력됨
+</script>
+
+<script>
+const fruits2 = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1").innerHTML = fruits;
+alert(fruits.push("Kiwi")); //배열의 길이를 반환
+document.getElementById("demo2").innerHTML = fruits.toString();
+</script>
+
+</body>
+</html>

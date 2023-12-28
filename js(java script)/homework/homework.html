@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>점수계산</title>
+    <style>
+        fieldset{
+            border: none;   
+            margin-left: 0px;
+        }
+        input{
+            text-align: center;
+            width: 70px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1>점수계산 프로그램</h1>
+    <div id="container">
+        <div class="boxFormBox">
+            <form action="aaa.jsp" method="get">
+                <fieldset>
+                    <label for="irum1">이름</label><input type="text" id="irum1" name="irum1" value=""><br>
+                    
+                    <legend>필수과목 성적 입력</legend>
+                    <label for="korean1">국어</label><input type="number" min="0" max="100" id="korean1" name="korean1" value="">점 <label for="korWeight">가중치</label><input type="number" id="korWeight" name="korWeight" requred value="5" disabled>점<br>
+
+                    <label for="english1">영어</label><input type="number" min="0" max="100" id="english1" name="english1" value="">점 <label for="engWeight">가중치</label><input type="number" id="engWeight" name="engWeight" requred value="4" disabled>점<br>
+                    
+                    <label for="math1">수학</label><input type="number" min="0" max="100" id="math1" name="math1" value="">점 <label for="mathWeight">가중치</label><input type="number" id="mathWeight" name="mathWeight" requred value="4" disabled>점<br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>선택과목 성적 입력</legend>
+                    <label for="optsub1">
+                        <select name="optsub1" id="Optsub1">
+                            <option value="history1">국사</option>
+                            <option value="ethics1">윤리</option>
+                            <option value="etc">그 외</option>
+                        </select>
+                        
+                        <label for="optional1"></label><input type="number" min="0" max="100" id="optional1" name="optional1" value="">점
+                        <label for="optWeight1">가중치</label><input type="number" min="1" max="5" step="0.1" id="optWeight1" name="optWeight1" value="">점<br>
+                    </label>
+                </fieldset>
+
+                <p1>=================================</p1>
+                <fieldset>
+                    <label for="irum2">이름</label><input type="text" id="irum2" name="irum2" value=""><br>
+                    <legend>필수과목 성적 입력</legend>
+                    <label for="korean2">국어</label><input type="number" min="0" max="100" id="korean2" name="korean2" value="">점 <label for="korWeight">가중치</label><input type="number" id="korWeight" name="korWeight" requred value="5" disabled>점<br>
+                    
+                    <label for="english2">영어</label><input type="number" min="0" max="100" id="english2" name="english2" value="">점 <label for="engWeight">가중치</label><input type="number" id="engWeight" name="engWeight" requred value="4" disabled>점<br>
+                    
+                    <label for="math2">수학</label><input type="number" min="0" max="100" id="math2" name="math2" value="">점 <label for="mathWeight">가중치</label><input type="number" id="mathWeight" name="mathWeight" requred value="4" disabled>점<br>
+                </fieldset>
+    
+                <fieldset>
+                    <legend>선택과목 성적 입력</legend>
+                    <label for="optsub2">
+                        <select name="optsub2" id="Optsub2">
+                            <option value="history2">국사</option>
+                            <option value="ethics2">윤리</option>
+                            <option value="etc">그 외</option>
+                        </select>
+                            
+                        <label for="optional2"></label><input type="number" min="0" max="100" id="optional2" name="optiona2" value="">점
+                        <label for="optWeight2">가중치</label><input type="number" min="1" max="5" step="0.1" id="optWeight2" name="optWeight2" value="">점<br>
+                    </label>
+                </fieldset>
+
+                <input type="button" value= "결과확인" onclick="getValue();">&nbsp;&nbsp;<input type="reset" value="입력취소">
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        //입력된 데이터를 변수로 저장
+        function getValue(){
+            let irum1=document.getElementById("irum1").value;
+            let korean1=document.getElementById("korean1").value-0;
+            let english1=document.getElementById("english1").value-0;
+            let math1=document.getElementById("math1").value-0;
+            let optional1=document.getElementById("optional1").value-0;
+            let optWeight1=document.getElementById("optWeight1").value-0;
+
+            let irum2=document.getElementById("irum2").value;
+            let korean2=document.getElementById("korean2").value-0;
+            let english2=document.getElementById("english2").value-0;
+            let math2=document.getElementById("math2").value-0;
+            let optional2=document.getElementById("optional2").value-0;
+            let optWeight2=document.getElementById("optWeight2").value-0;
+            let korWeight = 5;
+            let engWeight = 4;
+            let mathWeight = 4;
+
+            let arrData1=[];
+            arrData1.push({
+            jumsu: [korean1, english1, math1, optional1], 
+            weight:[korWeight, engWeight, mathWeight, optWeight1],
+            irum: irum1 
+            });
+
+            arrData1.push(
+                function weightedCal(){
+                    weightedSum=0;
+                    weightedAvg=0;
+                    for(let i=0; i<4; i=i+1){
+                        weightedSum = weightedSum + arrData1[0].jumsu[i] * arrData1[0].weight[i];
+                    }
+                    weightedAvg = weightedSum/4;
+                    return [weightedSum, weightedAvg];
+                }
+            )
+                
+            arrData1.push({
+            jumsu: [korean2, english2, math2, optional2], 
+            weight:[korWeight, engWeight, mathWeight, optWeight2],
+            irum: irum2
+            });
+
+            arrData1.push(
+                function weightedCal(){
+                    weightedSum=0;
+                    weightedAvg=0;
+                    for(let i=0; i<4; i=i+1){
+                        weightedSum = weightedSum + arrData1[2].jumsu[i] * arrData1[2].weight[i];
+                    }
+                    weightedAvg = weightedSum/4;
+                    return [weightedSum, weightedAvg];
+                }
+            )
+            
+            document.write("결과 확인".big().bold() +"</br>"+"</br>"); 
+
+            document.write(arrData1[0].irum+"의 가중 합산 점수는 " + arrData1[1]()[0] + "입니다." +"</br>"); 
+            document.write(arrData1[0].irum+"의 가중 평균은 " + arrData1[1]()[1] + "입니다." + "</br>" + "</br>")
+
+            document.write(arrData1[2].irum+"의 가중 합산 점수는 "+ arrData1[3]()[0]+"입니다." + "</br>"); 
+            document.write(arrData1[2].irum+"의 가중 평균은 " + arrData1[3]()[1]+ "입니다.");
+        }
+    </script>
+
+</body>
+</html>

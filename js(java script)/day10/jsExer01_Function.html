@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>함수</h1>
+    <script>
+        let aaa = 200;
+        console.log( aaa ); //aaa->들어있는 자료를 꺼내오는 역할을 수행
+       // aaa();  //aaa를 실행하라는 의미->error
+                //aaa에 저장된 자료가 함수자료가 아니기 때문
+        function aaaa(){
+            console.log("가나다라");
+            console.log("넘겨받은 자료의 개수: " + arguments.length + "개입니다.");
+        };
+
+        console.log("변수 aaaa에 들어있는 내용\n===== " + aaaa);
+
+        let bbbb = function(){      //bbbb에 함수를 저장
+            console.log("abcde");
+            console.log("넘겨받은 자료의 개수: " + arguments.length + "개입니다.");
+        };
+
+        console.log("변수 bbbb에 들어있는 내용\n===== " + bbbb);
+        
+        console.log(bbbb());    //함수->결과반환(함수실행 결과)+undefined를 넘겨받음.
+
+    </script>
+</body>
+</html>

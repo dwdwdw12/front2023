@@ -1,0 +1,11 @@
+div.contentBox{
+    border: 2px solid red;
+    margin: 10px 0 10px 5px;  /*시계방향으로 margin 설정*/
+}
+div p{
+    font-size: 1.5em;
+}
+:target {
+  border: 2px solid #D4D4D4;
+  background-color: #e5eecc;
+}

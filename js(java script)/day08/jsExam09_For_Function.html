@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>aa</h1>
+
+    <script>
+        // let sum=0;  //초기화 해줄 때 습관적으로 0을 사용하지 말고, 한 번 더 고민하자.
+        // for(let i=0; i<100; i=i+1){     //조건에 <, <= 잘 생각하기
+        //     sum=sum+i;                  //합을 구한다.-> 한 가지의 합만 구한다.
+        // };
+        // console.log("1부터 99까지의 합", sum);
+
+        function sumCalcu(start, end, incre){       //aaa-worker
+            let sum=0;  
+        for(let i=start; i<end; i=i+incre){    
+            sum=sum+i;                   
+            }
+            return sum;
+        }
+                                                //bbb-caller
+        console.log(sumCalcu(200,250+1,2));   //홀수,짝수, 범위, 조건 등 자유롭게 설정
+
+        //b는 a에게 의존하고 있다(dependency), b는 a에게 값을 주입하고 있다.(injection)
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,13 @@
+.slideshow{
+    height: 465px;   
+    overflow: hidden;
+    position: relative;
+    /*margin: 0 auto;*/
+}
+
+.slideshow img{
+    position: absolute;
+    left: 50%;
+    margin-left: -800px;    /*실제 이미지의 너비 계산*/
+    display: none;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>가나다</h1>
+    <script>
+        let i=20;
+        console.log(typeof i);  //typeof 연산자의 결과로 문자열을 반환
+        if(typeof i == `number`){ //반환된 문자열에 대한 논리값 비교, `` 주의
+            console.log("변수 i에 저장된 값은 숫자입니다.");
+        }
+        let aa= "abc";   //변수에 넣을 수 있는 것: 모두 //string
+        let bb= 123;    //number
+        let cc;         //undefined, 선언만 한 경우. 선언된 변수를 초기화할때 쓸수도 있음
+        let dd = null;  //object
+        let ee= [];     //object        //데이터를 정확히 판별할수는 없음
+        let ff= {};     //object       //모든 걸 상세히 분류하지는 않음
+        let gg= function(){};   //function
+        let hh= 20>30;  //boolean
+        console.log(typeof(aa));
+        console.log(typeof(bb));
+        console.log(typeof(cc));
+        console.log(typeof(dd));
+        console.log(typeof(ee));
+        console.log(typeof(ff));
+        console.log(typeof(gg));
+        console.log(typeof(hh));
+    </script>
+</body>
+</html>

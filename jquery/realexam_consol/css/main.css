@@ -1,0 +1,315 @@
+/*
+ * Base
+ */
+html {
+    font-family: "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+body {
+    background-color: #656565;
+}
+
+img {
+    vertical-align: middle;
+}
+ 
+button {
+    outline: none;
+}
+
+::-moz-selection {           /* moz: 모질라(mozila)용 selection*/
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {                   /*가상 선택자*/
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+.page-header {
+    background-color: #fff;
+}
+
+.page-header h1 {
+    width: 976px;
+    height: 80px;
+    margin: 0 auto;
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 80px;
+    letter-spacing: 0.1em;
+}
+
+.page-main {
+    position: relative;
+}
+
+.page-main > div {
+    padding: 50px 0 100px;
+}
+
+.page-main > div h2 {
+    color: #fff;
+    text-align: center;
+    margin: 0 0 50px;
+    font-weight: normal;
+    letter-spacing: 0.15em;
+}
+
+/* 스타일 지정 */
+
+#typo{
+    margin: 0;
+    padding: 0;
+    background-color: #3498db;
+    font-weight: bold;
+    font-size: 100px;
+    color: #FFF;
+    text-align: center;
+    height: 500px;
+    line-height: 500px;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;      /*브라우저 종류*/
+}
+
+#typo .inner{
+    width: 976px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#images {
+    background-color: #ff8873;
+}
+
+#images .inner{
+    position: relative;
+    width: 976px;
+    margin: 0 auto;
+}
+
+#images p {
+    position: relative;
+    width: 580px;
+    height: 380px;
+    margin: 0 auto 80px;
+}
+
+#images p strong {
+    color: #fff;
+    font-size: 20px;
+}
+
+.page-footer {
+    background-color: #656565;
+}
+
+.page-footer small {
+    display: block;
+    color: #fff;
+    font-size: 11px;
+    text-align: right;
+    width: 976px;
+    margin: 0 auto;
+    height: 120px;
+    line-height: 120px;
+    letter-spacing: 0.15em;
+}
+
+.page-footer a {
+    color: #fff;
+    text-decoration: none;
+}
+.clearfix:before,
+.clearfix:after {           /*float 해제*/
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+#images p {
+    overflow: hidden;
+}
+
+#images p strong {
+    position: absolute;
+    display: block;
+    z-index: 1;
+    bottom: 0;
+    width: 540px;
+    height: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: left;
+    padding: 20px;
+}
+
+#images p span {
+    position: absolute;
+    display: block;
+    z-index: 0;     /*p 뒤에 위치.*/
+    top: 0;
+    width: 580px;
+    height: 380px;
+    box-shadow: inset 0 0 50px rgba(50, 30, 0, 0.6),    
+                inset 0 0 100px rgba(50, 30, 0, 0.3);   /*박스 안쪽(inset)에 그림자를 삽입하고 싶을 때*/
+    background: rgba(255, 155, 0, 0.2);
+    opacity: 0;
+}
+
+#images p:nth-child(1) strong {
+    opacity: 0;             /*화면에 나타나지 않는 것처럼 보임*/
+}
+
+#images p:nth-child(2) strong {
+    opacity: 0;
+    left: -200%;            /*왼쪽으로 밀기*/
+}
+
+#images p:nth-child(3) strong {
+    bottom: -80px;
+    background: rgba(34, 34, 34, 1);
+}
+
+#images p:nth-child(3) img {
+    position: absolute;
+    top: 0px;
+}
+
+#buttons1{
+    background-color: #ebc000;
+}
+
+#buttons1 .inner{
+    width: 976px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#buttons1 button{
+    display: block;
+    width: 224px;
+    height : 80px;
+    margin: 0px 10px 20px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: #ebc000;
+    background-color: white;
+    border: solid red 0px;
+    border-radius: 20px;
+    float: left;
+    position: relative;
+}
+
+ #buttons1 button .bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+#buttons1 button .bg span{
+    display: block;
+    width: 224px;
+    height: 80px;
+    line-height: 80px;
+    color: white;
+    background-color: purple;
+    border-radius: 20px;
+} 
+
+/* 원형버튼 레이아웃 */
+#buttons2{
+    background-color: #01b169;
+    height: 340px;      /*float를 쓰지 않았기 때문에 clearfix는 의미없음. 
+                        적절한 높이를 지정해주기*/
+}
+
+#buttons2 .inner{
+    width: 976px;
+    margin: 0 auto;
+    position: relative;
+}
+/* 유사한 스타일 패턴이 반복된다 */
+
+#buttons2 .inner button{
+    display: block;
+    width: 224px;
+    height: 224px;  /*원형이라 가로/세로의 길이가 같아야함*/
+                    /* 버튼의 크기는 224px이지만, 내용물에 2개의 이미지(225+225), 문자가 삽입되어 overflow가 발생 */
+    overflow: hidden;
+    position: absolute; /*이미지가 겹쳐짐*/
+    border: none;
+    border-radius: 112px;   /*너비의 절반정도->원형*/
+    padding: 0 0 35px;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    color: #01b169;
+}
+
+#buttons2 button:nth-child(1){
+    left: 10px;
+}
+
+#buttons2 button:nth-child(2){
+    left: 254px;            /*여백과 너비를 계산*/
+}
+
+#buttons2 button:nth-child(3){
+    left: 498px;
+}
+
+#buttons2 button:nth-child(4){
+    left: 742px;
+}
+
+#buttons2 button img:first-child{
+    position: absolute;
+}
+
+#buttons2 button img:nth-child(2){
+    opacity: 0;             
+}
+
+/* aside 필요에 따라 나타나는 이미지 네비게이션 */
+.page-main>aside{
+    background-color: rgba(0, 0, 0, 0.8);   /*투명도 설정*/
+    width: 350px;   /*이징 효과를 위해서 사이즈 크기를 이미지+여백(margin, padding) 크기보다 더 주었다*/
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -350px; /* -350,-70px 화면에서 숨기는 방법*/  
+}
+
+.page-main>aside ul{
+    margin: 0;
+    padding: 0;
+    top:50px;
+    left: 110px;
+    position: absolute;
+}
+
+.page-main>aside ul li{
+    list-style: none;
+    margin: 0 0 30px 0; /*상 우 하 좌*/
+}
+
+.page-main>aside button{
+    background-color: rgba(0, 0, 0, 0.8);
+    display: block;     /*원래는 inline level*/
+    position: absolute;
+    top: 200px;
+    left: 350px;
+    width: 52px;
+    height: 132px;
+    margin: 0;
+    border: none;
+    border-radius: 0 5px 5px 0;  /*좌상 우상 우하 좌하, 둥글게*/
+}

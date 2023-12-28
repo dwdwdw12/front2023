@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p.abs{
+	position: absolute; /*겹치게 만들어짐*/
+}
+p.abs:nth-child(1){
+  margin-right: 30px; /*시간에 따라 변화시키면 움직이는 것처럼 보이게 할 수 있음*/
+  margin: 30px;
+}
+p.abs:nth-child(3){
+  left: 20px;
+  top: 5px; 
+}
+div.relative {
+  position: relative;
+  left: 30px;
+  border: 3px solid #73AD21;
+}
+</style>
+</head>
+<body>
+
+<h2>position: relative;</h2>
+
+<p>An element with position: relative; is positioned relative to its normal position:</p>
+
+<div class="relative">
+<p class="abs">This div element has position: relative;111</p>
+<p class="abs">This div element has position: relative;222</p>
+<p class="abs">This div element has position: relative;333</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+html {
+    font-family: "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+body {
+    background-color: #ebc000;/*#656565;*/
+}
+
+img {
+    vertical-align: middle;
+}
+
+button {
+    outline: none;
+}
+
+#buttons1{
+    background-color: #ebc000;
+}
+
+#buttons1.inner{
+    width: 975px;
+    margin: 0 auto;
+    /*position: relative;*/
+}
+
+#buttons1 button{
+    display: block;
+    width: 224px;
+    height : 80px;
+    /* line-height: 80px; */
+    margin: 0px 10px 20px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: #ebc000;
+    background-color: white;
+    border: solid red 0px;
+    border-radius: 20px;
+    float: left;
+    position: relative;
+}
+
+#buttons1 button .bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+#buttons1 button .bg span{
+    display: block;
+    width: 224px;
+    height: 80px;
+    line-height: 80px;
+    color: white;
+    background-color: purple;
+    border-radius: 20px;
+}
+
+.innerclearfix:before,
+.innerclearfix:after {           
+    content: " ";
+    display: table;
+}
+.innerclearfix:after {
+    clear: both;
+}

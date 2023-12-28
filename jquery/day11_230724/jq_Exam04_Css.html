@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("p").css({"background-color": "yellow", fontSize: "200%"});
+                                            //"font-size"에서 카멜표기법으로 변환할 때.
+  });
+});
+
+$(document).ready(function(){
+  $("button#hide").click(function(){
+    $("p").css({display: "none"});
+  });
+  $("button#show").click(function(){
+    $("p").css({display: "block"});
+  });
+});
+
+</script>
+</head>
+<body>
+
+<h2>This is a heading</h2>
+
+<p style="background-color:#ff0000">This is a paragraph.</p>
+<p style="background-color:#00ff00">This is a paragraph.</p>
+<p style="background-color:#0000ff">This is a paragraph.</p>
+
+<p>This is a paragraph.</p>
+
+<button>Set multiple styles for p</button>
+<button id="hide">숨기기</button>
+<button id="show">나타내기</button>
+
+</body>
+</html>

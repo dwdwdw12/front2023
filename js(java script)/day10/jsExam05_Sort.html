@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Arrays</h1>
+<h2>The sort() Method</h2>
+
+<p>Sort the array in ascending order:</p>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+const points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo1").innerHTML = points;  
+
+points.sort(function(a, b){return a - b});  //오름차순
+//points.sort(function(a, b){return b - a}); //내림차순
+//points.sort((a,b)=>b-a); //람다식 언어, 내림차순
+document.getElementById("demo2").innerHTML = points;
+</script>
+
+</body>
+</html>

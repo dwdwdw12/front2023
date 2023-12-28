@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>함수</h1>
+    <script>
+        let funOne = function(a,b,operator){
+            if(operator==="+") return function(){console.log(a+b)}; 
+            //클로져: 원래 함수 실행이 끝나는 시점에서 사라져야하지만, 함수로 반환되어 값이 사라있음.
+        }
+
+        let returnValue1 = funOne(10,20,'+'); //아래와 같음
+        //let returnValue= function(){console.log(a+b)}; 
+        returnValue1();
+
+        let returnValue2 = funOne(10,20,'-');
+        //let returnValue2 = undefined;
+        //console.log(returnValue2)
+        
+        (funOne(20,50,"+"))();  //익명함수를 호출하여 바로 실행
+
+    </script>
+</body>
+</html>

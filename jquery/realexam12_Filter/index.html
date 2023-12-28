@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>필터링 기능을 추가한 갤러리페이지</title>
+<link rel="stylesheet" href="./css/normalize.css">
+<link rel="stylesheet" href="./css/main.css">
+<script src="./js/vendor/modernizr.custom.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="./js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="./js/vendor/jquery.ba-throttle-debounce.min.js"></script>  <!--스크롤을 감지하는 시간간격을 추가, 부하를 줄임-->
+<script src="./js/vendor/imagesloaded.pkgd.min.js"></script>
+<script src="./js/vendor/masonry.pkgd.min.js"></script>
+<script src="./js/main.js"></script>
+</head>
+<body>
+
+<header class="page-header" role="banner">
+    <div class="inner clearfix">
+        <h1 class="site-logo"><a href="./"><img src="./img/logo.png" alt="Shiftbrain" height="21" width="169"></a></h1>
+        <form class="filter-form" id="gallery-filter">
+            <span class="form-item">
+                <input type="radio" name="filter" id="filter-all" value="all" checked>
+                <label for="filter-all">All</label>
+            </span>
+            <span class="form-item">
+                <input type="radio" name="filter" id="filter-people" value="people">
+                <label for="filter-people">People</label>
+            </span>
+            <span class="form-item">
+                <input type="radio" name="filter" id="filter-animals" value="animals">
+                <label for="filter-animals">Animals</label>
+            </span>
+            <span class="form-item">
+                <input type="radio" name="filter" id="filter-nature" value="nature">
+                <label for="filter-nature">Nature</label>
+            </span>
+            <span class="form-item">
+                <input type="radio" name="filter" id="filter-plantes" value="plantes">
+                <label for="filter-plantes">Plantes</label>
+            </span>
+            <span class="form-item">
+                <input type="radio" name="filter" id="filter-architects" value="architects">
+                <label for="filter-architects">Architects</label>
+            </span>
+        </form>
+    </div>
+</header>
+
+<div class="page-main" role="main">
+    <ul class="gallery" id="gallery">
+        <!--
+         li.gallery-item.is-loading>a[href="큰그림"] 
+        <li class="gallery-item is-loading">
+            <a href="큰그림">
+                <img src="작은 그림" alt="타이틀" />
+                 span.caption>b.title{아이템 타이틀}+time.date[datatime="아이템 데이트"]{아이템 데이트 정규식} 
+                <span class="caption">
+                    <b class="title">아이템 타이틀</b>
+                    <time class="date" datatime="아이템 데이트">
+                        아이템 데이트 정규식
+                    </time>
+                </span>
+            </a>
+        </li>   -->
+    
+    </ul>
+
+    <button class="load-more" id="load-more">Load more</button>
+</div>
+
+</body>
+</html>

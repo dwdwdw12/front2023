@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>논리 학습</h1>
+    <script>
+        let a; //논리적으로 해석하면 false. 선언만 했으므로, 값은 undefined이다.
+        let b = 'A';    //논리적으로 해석하면 true. 값은 문자열 A이다.
+        let k = a&&b;
+        let l = b&&a;
+        console.log(k); //k를 출력하지 말고 논리적으로 해석한다면 false, 저장된 값을 가져오면 undefined가 된다.
+        console.log(l);
+
+        let m= a||b;    //or을 사용, a는 논리적으로 false이므로 b의 값에 따라 논리연산의 결과가 좌우. m에는 b의 값이 저장됨.
+        console.log(m);
+        console.log("===========================")
+
+        a="abcd";
+        b="가나다라";
+
+        k= a&&b;    //앞의 a는 true, k에 b를 대입시키는 꼴, 가나다라 출력
+        console.log(k); 
+
+        n=a||b;
+        console.log(n);
+
+        console.log(a&&b);
+        if(a&&b){   //가나다라->빈문자 아님->true
+            console.log("나의 살던 고향은");
+        }
+        console.log("============================")
+
+        a=200;
+        console.log(!a);     //&&, || : 데이터 반환, ! : true/false 반환
+        a="200";
+        console.log(!a);
+    </script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹페이지</title>
+    <style>
+        *{
+            list-style: none;
+            text-decoration: none
+        }
+
+        #container{         /*id*/
+            width: 1200px;
+            margin: 0 auto; /*div를 가운데정렬*/
+            border: 3px solid black;
+            padding: 15px;
+        }
+        .box{
+            border: 1px solid tomato;
+            padding: 10px;
+        }
+        .contentOutBox{
+            border: 3px solid greenyellow;
+        }
+        img{
+            width: 300px; height: 250px;
+            border: 2px dotted grey;
+            padding: 5px;
+        }
+        li{
+            /* color: white; */
+            list-style: none;   /*목록 모양->없음*/
+            display: inline-block;
+            width: 200px;
+            background-color: aquamarine;
+            color: white !important; 
+            padding: 7px;   /*안쪽 여백*/
+            font-size: 1.5em;   /*글자 크기 1.5배*/
+            text-align: center;
+        }
+        li:hover{
+            background-color: blue;
+            color: white !important;
+        }
+    </style> 
+</head>
+<body>
+    <!-- #container만 써도 div 삽입 -->
+    <div id="container">
+        <div class="box headerBox">
+            <img src="./images/sun.png" alt="logo" title="logo" />
+            <h1>Sun Microsystems</h1>
+            <div class="box globalnavBox">
+                <!-- ul>(li>a{메뉴$$$})*5 -->
+                <ul>
+                    <a href="#">
+                        <li>메뉴001</li>
+                    </a>
+                    <a href="#">
+                        <li>메뉴002</li>
+                    </a>
+                    <a href="#">
+                        <li>메뉴003</li>
+                    </a>
+                    <a href="#">
+                        <li>메뉴004</li>
+                    </a>
+                    <a href="#">
+                        <li>메뉴005</li>
+                    </a>
+                </ul>
+                <!-- <ul>
+                    <li>
+                        <a href="#">메뉴001</a>
+                    </li>
+                    <a href="#"><li>메뉴002</li></a>
+                    <li><a href="#">메뉴003</a></li>
+                    <li><a href="#">메뉴004</a></li>
+                    <li><a href="#">메뉴005</a></li>
+                </ul> -->
+            </div>
+        </div>
+        <div class="box contentOutBox">
+            <div class="box localnavBox">
+                <!-- ul>(li>a{메뉴$$$})*5 -->
+                <ul>
+                    <li><a href="#">메뉴001</a></li>
+                    <li><a href="#">메뉴002</a></li>
+                    <li><a href="#">메뉴003</a></li>
+                    <li><a href="#">메뉴004</a></li>
+                    <li><a href="#">메뉴005</a></li>
+                </ul>
+            </div>
+            <div class="box imgBox">
+                <img src="./images/flower01.jpg" alt="red flower" title="red flower" >
+                <img src="./images/flower02.jpg" alt="blue flower" title="blue flower">
+                <img src="./images/flower03.jpg" alt="pink flower" title="pink flower" >
+            </div>
+            <div class="box" formBox>
+                <!-- select>option(하나, n개(multiple)),textArea,입력상자 데이터리스트 -->
+                <form action="bbb.jsp" method="get">
+                    <!-- (label{라벨}+input[type id name]+br)*4 -->
+                    <fieldset>
+                        <legend>필수입력</legend>
+                        <label for="irum">이름</label><input type="text" id="irum" name="irum"><br>
+                        <label for="memId">아이디</label><input type="text" id="memId" name="memId"><br>
+                        <label for="memPwd">비밀번호</label><input type="password" id="memPwd" name="memPwd"><br>
+                        <label for="memPwdCk">비밀번호 확인</label><input type="password" id="memPwdCk" ><br>
+                    </fieldset>
+                    <hr />
+
+                    <fieldset>
+                        <legend>선택입력</legend>
+                        <label for="memAge">나이</label><input type="number" id="memAge" name="memAge"><br>
+                        <label for="memBir">생년월일</label><input type="date" id="memBir" name="memBir"><br>
+                        <label for="memAddr">주소</label><input type="text" id="memAddr" name="memAddr"><br>
+                        <label for="memEmail">메일주소</label><input type="email" id="memEmail" name="memEmail"><br>
+                    </fieldset>
+                    <hr />
+
+                    <fieldset>
+                        <legend>성별</legend>
+                        <!-- (label{성별}>input[type id name value])*2 -->
+                        <label for="man">남자</label><input type="radio" id="man" name="gender" value="man">
+                        <label for="woman">여자</label><input type="radio" id="woman" name="gender" value="woman">
+                    </fieldset>
+                    <hr />
+                    
+                    <fieldset>
+                        <label for="gender">성별&nbsp;
+                            <select name="gender" id="gender">
+                                <option value="man">남자</option>
+                                <option value="woman">여자</option>
+                            </select>
+                        </label>
+                    </fieldset>
+
+                    <!-- <fieldset>
+                        <legend>성별
+                            <select name="gender" id="gender">
+                                <option value="man">남자</option>
+                                <option value="woman">여자</option>
+                            </select>
+                        </legend>
+                    </fieldset> -->
+                    
+                    <fieldset>
+                        <legend>관심카테고리</legend>
+                        <!-- input[type id name value]>label{라벨}*3 -->
+                        <input type="checkbox" id="item1" name="wishlist1" value="elec">
+                        <label for="item1">전자제품</label></input>
+                        <input type="checkbox" id="item2" name="wishlist2" value="spt">
+                        <label for="item2">스포츠용품</label></input>
+                        <input type="checkbox" id="item3" name="wishlist3" value="food">
+                        <label for="item3">식료품</label></input>
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="wishlist">관심카테고리
+                            <select name="wishlist" id="wishlist" multiple>
+                                <option value="item1">전자제품</option>
+                                <option value="item2">스포츠용품</option>
+                                <option value="item3">식료품</option>
+                                <option value="item4">주방용품</option>
+                            </select>
+                        </label>
+                    </fieldset>
+
+                    <input type="submit" value="회원가입">&nbsp;&nbsp;<input type="reset" value="입력취소">
+                </form>
+            </div>
+        </div>
+        <div class="box footerBox">
+            <p>회사명</p>
+            <address>
+                <p>Sun Microsystems</p>
+                <p>경기도 수원시</p>
+            </address>
+        </div>
+    </div>
+    
+</body>
+</html>

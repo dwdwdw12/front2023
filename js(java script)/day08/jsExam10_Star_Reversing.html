@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>abc</h1>
+    <script>
+        for(let i=0; i<5; i=i+1){                       //*
+            let starChar = "";                          //**
+            for(let j=0; j<i+1; j=j+1){                 //***
+                starChar = starChar+"*";                //****
+            }                                           //*****
+           console.log(i, starChar);
+        }                       //초기 결과를 그려보기
+
+        let password = "yangdoly";
+        let pwdLen= password.length;
+        let transPwd= '';
+
+        for(let i=pwdLen-1; i>-1; i=i-1){
+            console.log(i+1, "번째 돌고 있습니다.");
+            transPwd=transPwd + password.charAt(i);
+        }
+        
+        console.log("ylodynay", transPwd);
+
+        rancePwd='';
+        for(let j=0; j<pwdLen; j=j+1){
+            console.log(j+1, "번째 돌고 있습니다.");
+            transPwd=transPwd + password.charAt(pwdLen-1-j);
+        }
+        console.log("ylodynay", transPwd);
+    </script>
+</body>
+</html>

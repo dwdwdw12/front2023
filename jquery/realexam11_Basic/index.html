@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>AJAX-JSON을 이용한 갤러리 페이지 만들기</title>
+<link rel="stylesheet" href="./css/normalize.css">
+<link rel="stylesheet" href="./css/main.css">
+<script src="./js/vendor/modernizr.custom.min.js"></script>         <!--옛날 라이브러리 등을 요즘 브라우저에 맞게 번역-->
+<script src="./js/vendor/jquery-3.6.4.min.js"></script>             <!--jQuery 교체-->
+<script src="./js/vendor/imagesloaded.pkgd.min.js"></script>        <!--서버에서 이미지를 다운로드 받았는지 확인-->
+<script src="./js/vendor/masonry.pkgd.min.js"></script>             <!--filier-list?? 제작에 필요(위의 것과 함께)-->
+<script src="./js/main.js"></script>
+</head>
+<body>
+
+<header class="page-header" role="banner">
+    <div class="inner">
+        <h1 class="site-logo"><a href="./"><img src="./img/logo.png" alt="Shiftbrain" height="21" width="169"></a></h1>
+    </div>
+</header>
+
+<div class="page-main" role="main">
+    <ul class="gallery" id="gallery"></ul>
+        <!-- li.gallery-item.is-loading>a[href="라지 이미지"].img[src="썸네일 이미지" alter="타이틀"] -->
+        <li class="gallery-item is-loading"><a href="라지 이미지"><img src="썸네일 이미지" alt="" alter="타이틀"></a></li>
+</div>
+
+</body>
+</html>

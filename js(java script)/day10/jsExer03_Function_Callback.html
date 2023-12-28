@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>함수2</h1>
+    
+    <script>    
+      
+        function aaa(a,b,c){       
+            console.log(a);
+            
+            // if(typeof a==='function'){
+            //     a();        //callback, 아래의 aaa를 넘겨받음.
+            // };
+
+            if(c)   a();
+            if(!c)  b();
+            
+        }
+
+        aaa(function(){console.log("가나다라마바");},
+            function(){console.log("ABCDEFG");},
+            0 
+        );   //callback 함수
+    </script>
+</body>
+</html>
